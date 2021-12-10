@@ -1,14 +1,17 @@
-//
-//  main.cpp
-//  fractionReducer
-//
-//  Created by Abel Christy Anand on 12/8/21.
-//
-
 #include <iostream>
+using namespace std;
+
+void gcf(int num, int den) {
+    int gcf = 1;
+    for (int i = 0; 0 < i; i--) {
+        if (num % i==0 && den % i==0) {
+            gcf = i;
+            break;
+        }
+        cout << gcf;
+    }
+}
 
 int main(int argc, const char * argv[]) {
-    // insert code here...
-    std::cout << "Hello, World!\n";
-    return 0;
+    gcf(4,8);
 }
