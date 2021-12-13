@@ -3,24 +3,22 @@ using namespace std;
 
 int gcd(int a, int b)
 {
-    // Everything divides 0
-    if (a == 0)
-       return b;
-    if (b == 0)
-       return a;
-  
-    // base case
-    if (a == b)
-        return a;
-  
-    // a is greater
-    if (a > b)
-        return gcd(a-b, b);
-    return gcd(a, b-a);
+    int gcf = 1;
+    int greaterNumber;
+    if (a > b) {
+        greaterNumber = a;
+    }
+    else if (a < b) {
+        greaterNumber = b;
+    }
+    else {
+        gcf = a;
+    }
+    return gcf;
 }
 
 int main() {
-    int a = 98, b = 56;
+    int a = 98, b = 98;
        printf("GCD of %d and %d is %d ", a, b, gcd(a, b));
        return 0;
 
