@@ -1,17 +1,27 @@
 #include <iostream>
 using namespace std;
 
-void gcf(int num, int den) {
-    int gcf = 1;
-    for (int i = 0; 0 < i; i--) {
-        if (num % i==0 && den % i==0) {
-            gcf = i;
-            break;
-        }
-        cout << gcf;
-    }
+int gcd(int a, int b)
+{
+    // Everything divides 0
+    if (a == 0)
+       return b;
+    if (b == 0)
+       return a;
+  
+    // base case
+    if (a == b)
+        return a;
+  
+    // a is greater
+    if (a > b)
+        return gcd(a-b, b);
+    return gcd(a, b-a);
 }
 
-int main(int argc, const char * argv[]) {
-    gcf(4,8);
+int main() {
+    int a = 98, b = 56;
+       printf("GCD of %d and %d is %d ", a, b, gcd(a, b));
+       return 0;
+
 }
